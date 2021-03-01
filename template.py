@@ -1,12 +1,26 @@
 from abc import ABC, abstractmethod
 
+
 class Agent(ABC):
+    """
+    The abstract base class for all RL algorithms.
+
+    """
+
+    def __init__(self, env):
+        """
+        Signature for initialization
+
+        :param env: gym env object
+        """
+        self.env = env
 
     @abstractmethod
     def train(self):
         """
+        Signature for training
 
-        :return:
+        :return: Optimal policy
         """
 
         pass
@@ -14,8 +28,10 @@ class Agent(ABC):
     @abstractmethod
     def evaluate(self, pi):
         """
+        Signature for evaluation
 
-        :return:
+        :param pi: input policy for evaluation
+        :return: Value function
         """
 
         pass
